@@ -85,6 +85,12 @@ sudo useradd -m -s /bin/bash incoming
 
 [https://docs.gitlab.com/runner/install/linux-repository.html](https://docs.gitlab.com/runner/install/linux-repository.html)
 
+* Create a runner
+
+```shell
+sudo gitlab-ci-multi-runner register
+```
+
 ### Commands
 
 [https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/docs/commands/README.md](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/docs/commands/README.md)
