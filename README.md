@@ -91,6 +91,13 @@ sudo useradd -m -s /bin/bash incoming
 sudo gitlab-ci-multi-runner register
 ```
 
+* Start as a service
+
+```shell
+sudo gitlab-ci-multi-runner install
+sudo gitlab-ci-multi-runner start
+```
+
 ### Commands
 
 [https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/docs/commands/README.md](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/docs/commands/README.md)
