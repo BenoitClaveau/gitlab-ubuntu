@@ -142,3 +142,10 @@ sudo chmod +x upgrade_mattermost
 sudo bash upgrade_mattermost
 ```
 
+### Restart
+
+```shell
+sudo gitlab-ctl stop mattermost
+sudo gitlab-ctl start mattermost
+
+```
