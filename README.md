@@ -104,7 +104,7 @@ sudo gitlab-ci-multi-runner start
 
 ## Mattermost
 
-* Uncomment mattermost_externam_url
+* Uncomment mattermost_external_url
 
 
 ### 502 Bad Gateway
