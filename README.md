@@ -102,4 +102,43 @@ sudo gitlab-ci-multi-runner start
 
 [https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/docs/commands/README.md](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/docs/commands/README.md)
 
+## Mattermost
+
+* Uncomment mattermost_externam_url
+
+
+### 502 Bad Gateway
+
+#### Create a batch to upgrate Mattermost
+
+```shell
+sudo nano upgrade_mattermost
+```
+
+```shell
+# /bin/bash
+
+declare -a versions=("1.0.0" "1.1.0" "1.2.1" "1.3.0" "1.4.0" "2.0.0" "2.1.0" "2.2.0")
+
+for v in "${versions[@]}"
+do
+     wget https://releases.mattermost.com/${v}/mattermost-team-${v}-linux-amd64.tar.gz -O - | tar -xz
+     gitlab-ctl stop mattermost
+     rm /opt/gitlab/embedded/bin/mattermost
+     cp mattermost/bin/platform /opt/gitlab/embedded/bin/mattermost
+     rm /var/opt/gitlab/mattermost/config.json
+     cp mattermost/config/config.json /var/opt/gitlab/mattermost/config.json
+     gitlab-ctl reconfigure
+     gitlab-ctl start mattermost
+done
+```
+
+
+```shell
+sudo chmod +x upgrade_mattermost
+```
+
+```shell
+sudo bash upgrade_mattermost
+```
 
