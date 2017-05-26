@@ -113,6 +113,12 @@ sudo gitlab-ctl stop mattermost
 sudo gitlab-ctl start mattermost
 ```
 
+### log
+
+```shell
+sudo tail /var/log/gitlab/mattermost/mattermost.log
+```
+
 ### configuration
 
 [https://docs.mattermost.com/administration/config-settings.html](https://docs.mattermost.com/administration/config-settings.html)
