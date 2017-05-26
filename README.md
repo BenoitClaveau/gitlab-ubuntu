@@ -182,7 +182,7 @@ drop database mattermost_production;
 * Exit (\q) and run
 
 ```shell
-gitlab-ctl reconfigure
+sudo gitlab-ctl reconfigure
 ```
 
 
