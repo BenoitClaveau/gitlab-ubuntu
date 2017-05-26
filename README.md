@@ -125,6 +125,8 @@ sudo tail /var/log/gitlab/mattermost/mattermost.log
 
 ```shell
 http://mattermost.exemple.com:8065
+
+sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json
 ```
 
 ### 502 Bad Gateway
