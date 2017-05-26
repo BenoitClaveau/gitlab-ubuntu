@@ -106,6 +106,20 @@ sudo gitlab-ci-multi-runner start
 
 * Uncomment mattermost_external_url
 
+### Start & Stop
+
+```shell
+sudo gitlab-ctl stop mattermost
+sudo gitlab-ctl start mattermost
+```
+
+### configuration
+
+[https://docs.mattermost.com/administration/config-settings.html](https://docs.mattermost.com/administration/config-settings.html)
+
+```shell
+http://mattermost.exemple.com:8065
+```
 
 ### 502 Bad Gateway
 
@@ -142,10 +156,3 @@ sudo chmod +x upgrade_mattermost
 sudo bash upgrade_mattermost
 ```
 
-### Restart
-
-```shell
-sudo gitlab-ctl stop mattermost
-sudo gitlab-ctl start mattermost
-
-```
