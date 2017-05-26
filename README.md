@@ -159,7 +159,6 @@ do
 done
 ```
 
-
 ```shell
 sudo chmod +x upgrade_mattermost
 ```
@@ -167,4 +166,23 @@ sudo chmod +x upgrade_mattermost
 ```shell
 sudo bash upgrade_mattermost
 ```
+
+### Reset Mattermost databse
+
+* Login to the database
+
+```shell
+sudo -u gitlab-psql /opt/gitlab/embedded/bin/psql -h /var/opt/gitlab/postgresql -d gitlabhq_production
+```
+* Drop mattermost DB
+
+```shell
+drop database mattermost_production;
+```
+* Exit (\q) and run
+
+```shell
+gitlab-ctl reconfigure
+```
+
 
