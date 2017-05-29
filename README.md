@@ -124,14 +124,27 @@ sudo tail /var/log/gitlab/mattermost/mattermost.log
 [https://docs.mattermost.com/administration/config-settings.html](https://docs.mattermost.com/administration/config-settings.html)
 
 ```shell
-http://mattermost.exemple.com:8065
-
-sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json
-
-sudo -u mattermost -i bash
 cd /opt/gitlab/embedded/service/mattermost
-/opt/gitlab/embedded/bin/mattermost -config='/var/opt/gitlab/mattermost/config.json'
+sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
+=> Parsing error. Replace "[]" by []
+sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
+=> Version: 3.9.0
 ```
+
+* Reset database
+
+```shell
+sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json reset
+```
+
+* Restart Mattermost
+
+```shell
+sudo gitlab-ctl stop mattermost
+sudo gitlab-ctl start mattermost
+```
+
+* Open url: http://mattermost.exemple.com
 
 ### 502 Bad Gateway
 
