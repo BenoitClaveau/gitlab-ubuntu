@@ -29,7 +29,7 @@ sudo /etc/init.d/postfix restart
 sudo nano /etc/gitlab/gitlab.rb
 ```
 
-* Modify external_url to http:olmo.izzili.com
+* Modify external_url to http://...
 * Uncomment smtp [https://docs.gitlab.com/omnibus/settings/smtp.html](https://docs.gitlab.com/omnibus/settings/smtp.html)
 
 ```shell
